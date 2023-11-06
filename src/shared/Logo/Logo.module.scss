@@ -1,0 +1,8 @@
+.logo {
+  width: inherit;
+  height: inherit;
+
+  svg {
+    @apply w-full h-full;
+  }
+}

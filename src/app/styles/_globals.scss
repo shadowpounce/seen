@@ -1,0 +1,17 @@
+body {
+  @apply bg-black;
+
+  font-family: 'Zeitung Micro Pro';
+  font-size: 0.926vw;
+  color: #fff;
+
+  @media (max-width: $tablet) {
+    font-size: 3.59vw;
+  }
+}
+
+.container {
+  @apply py-[10vh];
+  max-width: 100% !important;
+  width: 100% !important;
+}

@@ -60,8 +60,8 @@ export const Main = () => {
             style={{
               transitionDelay:
                 idx % 2 === 0
-                  ? `${idx * 0.025 + 0.2}s`
-                  : `${idx * 0.0115 + 0.2}s`,
+                  ? `${idx * 0.035 + 0.2}s`
+                  : `${idx * 0.0155 + 0.2}s`,
             }}
             src={r}
             alt=""
@@ -171,18 +171,21 @@ export const Main = () => {
               fill="#090909"
             />
             <path
+              className="l-1"
               d="M163.885 10.512L167.588 0.955495"
               stroke="white"
               stroke-width="1.5"
               stroke-linecap="round"
             />
             <path
+              className="l-2"
               d="M168.387 15.9867L178.179 7.8092"
               stroke="white"
               stroke-width="1.5"
               stroke-linecap="round"
             />
             <path
+              className="l-3"
               d="M172.889 21.4615L178.386 23.555"
               stroke="white"
               stroke-width="1.5"

@@ -2,11 +2,29 @@
   @apply flex flex-col items-center w-full h-screen overflow-hidden pt-[16vh] relative max-h-[99.9vh];
 
   @media (max-width: $tablet) {
-    @apply pt-[27.5vh];
+    @apply pt-[20dvh] max-h-[100dvh] h-[100dvh];
   }
 
   .mobileDownload {
-    @apply w-[46.154vw] h-[22.051vw] absolute left-1/2 translate-x-[-45%] top-[40%] z-[4] duration-[650ms] delay-[850ms] opacity-0 scale-[0.5];
+    @apply w-[46.154vw] h-[22.051vw] absolute left-1/2 translate-x-[-45%] top-[32.5dvh] z-[1] duration-[650ms] delay-[450ms] translate-y-[200%] opacity-0 scale-[0.5];
+
+    path {
+    }
+
+    path[class='l-1'] {
+      stroke-dashoffset: 1000;
+      stroke-dasharray: 1000;
+    }
+
+    path[class='l-2'] {
+      stroke-dashoffset: 1000;
+      stroke-dasharray: 1000;
+    }
+
+    path[class='l-3'] {
+      stroke-dashoffset: 1000;
+      stroke-dasharray: 1000;
+    }
 
     transition-property: opacity, transform;
 
@@ -17,7 +35,7 @@
 
   &.loaded {
     .mobileDownload {
-      @apply opacity-100 scale-100;
+      @apply opacity-100 scale-100 translate-y-0;
     }
 
     .mainLogo {
@@ -28,6 +46,18 @@
       animation: draw 7.5s infinite ease 1s;
     }
 
+    path[class='l-1'] {
+      animation: draw 10s infinite ease 1s;
+    }
+
+    path[class='l-2'] {
+      animation: draw 10s infinite ease 1.15s;
+    }
+
+    path[class='l-3'] {
+      animation: draw 10s infinite ease 1.3s;
+    }
+
     .device {
       @apply scale-100 opacity-100;
     }
@@ -35,7 +65,8 @@
     .emojies {
       img {
         @apply opacity-100;
-        transform: translate(0) !important;
+        translate: 0 !important;
+        // transform: translate(0) !important;
       }
     }
 
@@ -56,7 +87,7 @@
     @apply w-full h-full absolute top-0 left-0 pointer-events-none z-[2] transition-transform duration-[1450ms] overflow-hidden;
 
     @media (max-width: $tablet) {
-      @apply z-[3] bottom-0 h-[135%] w-[125%] translate-x-[-50%] left-1/2;
+      @apply z-[2] bottom-0 h-[135%] w-[125%] translate-x-[-50%] left-1/2;
 
       top: unset;
     }
@@ -64,78 +95,223 @@
     transform-origin: center;
 
     img {
-      @apply w-[2.894vw] h-[2.894vw] object-contain object-center opacity-0 translate-y-[500%];
+      @apply w-[2.894vw] h-[2.894vw] object-contain object-center opacity-0;
       position: absolute;
 
       transition: 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-      transition-property: transform, opacity;
+      transition-property: transform, translate, opacity;
 
       @media (max-width: $tablet) {
-        scale: 2.5 !important;
+        @apply translate-y-[500%];
+        scale: 3 !important;
+        transition: 0.85s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
 
       &:nth-child(1) {
-        @apply translate-x-[250%] rotate-[25.176deg] w-[1.852vw] h-[1.852vw] left-[17.998vw] bottom-[41.46%];
+        translate: 250% 500%;
+
+        @media (max-width: $tablet) {
+          translate: 250% 1000%;
+        }
+
+        @apply rotate-[25.176deg] w-[1.852vw] h-[1.852vw] left-[17.998vw] bottom-[41.46%];
+
+        @media (max-width: $tablet) {
+          bottom: unset;
+
+          @apply top-[35%] left-[33.5vw];
+        }
       }
 
       &:nth-child(2) {
-        @apply translate-x-[250%] w-[2.604vw] h-[2.604vw] rotate-[-10.156deg] left-[15vw] bottom-[25%];
+        translate: 250% 500%;
+
+        @media (max-width: $tablet) {
+          translate: 250% 1000%;
+        }
+
+        @apply w-[2.604vw] h-[2.604vw] rotate-[-10.156deg] left-[15vw] bottom-[25%];
+
+        @media (max-width: $tablet) {
+          @apply top-[25%] left-[27vw];
+          bottom: unset;
+        }
       }
 
       &:nth-child(3) {
-        @apply translate-x-[250%] rotate-[-12.172deg] bottom-[42%] left-[34vw];
+        translate: 250% 500%;
+
+        @media (max-width: $tablet) {
+          translate: 250% 1000%;
+        }
+
+        @apply rotate-[-12.172deg] bottom-[42%] left-[34vw];
+
+        @media (max-width: $tablet) {
+          @apply left-[60vw] top-[18%];
+          bottom: unset;
+        }
       }
 
       &:nth-child(4) {
-        @apply translate-x-[250%] w-[4.167vw] h-[4.167vw] rotate-[95.396deg] left-[34vw] bottom-[20%];
+        translate: 250% 500%;
+
+        @media (max-width: $tablet) {
+          translate: 250% 1000%;
+        }
+
+        @apply w-[4.167vw] h-[4.167vw] rotate-[95.396deg] left-[34vw] bottom-[20%];
+
+        @media (max-width: $tablet) {
+          @apply bottom-[42.5%] left-[22vw];
+        }
       }
 
       &:nth-child(5) {
-        @apply translate-x-[250%] w-[1.736vw] h-[1.736vw] rotate-[-30deg] left-[27vw] bottom-[5%];
+        translate: 250% 500%;
+
+        @media (max-width: $tablet) {
+          translate: 250% 1000%;
+        }
+
+        @apply w-[1.736vw] h-[1.736vw] rotate-[-30deg] left-[27vw] bottom-[5%];
       }
 
       &:nth-child(6) {
-        @apply translate-x-[250%] w-[2.199vw] h-[2.199vw] rotate-[21.44deg] left-[38vw] bottom-[35%];
+        translate: 250% 500%;
+
+        @media (max-width: $tablet) {
+          translate: 250% 1000%;
+        }
+
+        @apply w-[2.199vw] h-[2.199vw] rotate-[21.44deg] left-[38vw] bottom-[35%];
       }
 
       &:nth-child(7) {
-        @apply translate-x-[250%] w-[2.315vw] h-[2.315vw] rotate-[-21.708deg] left-[38vw] bottom-[60.5%];
+        translate: 250% 500%;
+
+        @media (max-width: $tablet) {
+          translate: 250% 1000%;
+        }
+
+        @apply w-[2.315vw] h-[2.315vw] rotate-[-21.708deg] left-[38vw] bottom-[60.5%];
+
+        @media (max-width: $tablet) {
+          @apply bottom-[56%] left-[42vw];
+        }
       }
 
       &:nth-child(8) {
-        @apply translate-x-[-150%] w-[2.662vw] h-[2.662vw] rotate-[-26.896deg] bottom-[7.5%] right-[42.5%];
+        translate: -150% 500%;
+
+        @media (max-width: $tablet) {
+          translate: -150% 1000%;
+        }
+
+        @apply w-[2.662vw] h-[2.662vw] rotate-[-26.896deg] bottom-[7.5%] right-[42.5%];
       }
 
       &:nth-child(9) {
-        @apply translate-x-[-150%] w-[2.778vw] h-[2.778vw] rotate-[-17.667deg] right-[40%] bottom-[58%];
+        translate: -150% 500%;
+
+        @media (max-width: $tablet) {
+          translate: -150% 1000%;
+        }
+
+        @apply w-[2.778vw] h-[2.778vw] rotate-[-17.667deg] right-[40%] bottom-[58%];
+
+        @media (max-width: $tablet) {
+          bottom: unset;
+          @apply top-[15%] right-[65%];
+        }
       }
 
       &:nth-child(10) {
-        @apply translate-x-[-150%] w-[2.604vw] h-[2.604vw] rotate-[-19.696deg] right-[37%] bottom-[40%];
+        translate: -150% 500%;
+
+        @media (max-width: $tablet) {
+          translate: -150% 1000%;
+        }
+
+        @apply w-[2.604vw] h-[2.604vw] rotate-[-19.696deg] right-[37%] bottom-[40%];
       }
 
       &:nth-child(11) {
-        @apply translate-x-[-150%] w-[4.167vw] h-[4.167vw] rotate-[30deg] right-[28%] bottom-[30%];
+        translate: -150% 500%;
+
+        @media (max-width: $tablet) {
+          translate: -150% 1000%;
+        }
+
+        @apply w-[4.167vw] h-[4.167vw] rotate-[30deg] right-[28%] bottom-[30%];
+
+        @media (max-width: $tablet) {
+          @apply bottom-[57%] right-[30vw];
+        }
       }
 
       &:nth-child(12) {
-        @apply translate-x-[-150%] w-[2.025vw] h-[2.025vw] rotate-[43.477deg] right-[17.5%] bottom-[45%];
+        translate: -150% 500%;
+
+        @media (max-width: $tablet) {
+          translate: -150% 1000%;
+        }
+
+        @apply w-[2.025vw] h-[2.025vw] rotate-[43.477deg] right-[17.5%] bottom-[45%];
       }
 
       &:nth-child(13) {
-        @apply translate-x-[-150%] w-[2.431vw] h-[2.431vw] bottom-[14%] right-[22%];
+        translate: -150% 500%;
+
+        @media (max-width: $tablet) {
+          translate: -150% 1000%;
+        }
+
+        @apply w-[2.431vw] h-[2.431vw] bottom-[14%] right-[22%];
       }
 
       &:nth-child(14) {
-        @apply translate-x-[-150%] w-[2.431vw] h-[2.431vw] right-[17.5%] rotate-[36.705deg] bottom-[10%];
+        translate: -150% 500%;
+
+        @media (max-width: $tablet) {
+          translate: -150% 1000%;
+        }
+
+        @apply w-[2.431vw] h-[2.431vw] right-[17.5%] rotate-[36.705deg] bottom-[10%];
+        @media (max-width: $tablet) {
+          @apply bottom-[66%] right-[45vw];
+        }
       }
 
       &:nth-child(15) {
-        @apply translate-x-[-150%] w-[3.009vw] h-[3.009vw] rotate-[165deg] right-[10%] bottom-[40%];
+        translate: -150% 500%;
+
+        @media (max-width: $tablet) {
+          translate: -150% 1000%;
+        }
+
+        @apply w-[3.009vw] h-[3.009vw] rotate-[165deg] right-[10%] bottom-[40%];
+
+        @media (max-width: $tablet) {
+          right: unset;
+          @apply left-[30vw] bottom-[50%];
+        }
       }
 
       &:nth-child(16) {
-        @apply translate-x-[-150%] w-[2.083vw] h-[2.083vw] rotate-[11.654deg] right-[12.5%] bottom-[15%];
+        translate: -150% 500%;
+
+        @media (max-width: $tablet) {
+          translate: -150% 1000%;
+        }
+
+        @apply w-[2.083vw] h-[2.083vw] rotate-[11.654deg] right-[12.5%] bottom-[15%];
+
+        @media (max-width: $tablet) {
+          @apply right-[22.5vw];
+          bottom: unset;
+          top: 28%;
+        }
       }
     }
   }
@@ -160,81 +336,121 @@
       &:nth-child(1) {
         translate: 100% 75%;
 
+        @media (max-width: $tablet) {
+          translate: 300% 500%;
+        }
+
         @apply opacity-0 w-[5.787vw] h-[5.787vw] rotate-[-65.247deg] left-[9.664vw] bottom-[19.42%];
 
         @media (max-width: $tablet) {
-          @apply bottom-[30%] left-[25vw] rotate-[15.368deg];
+          @apply bottom-[32%] left-[25vw] rotate-[15.368deg];
         }
       }
 
       &:nth-child(2) {
         translate: 100% 75%;
 
+        @media (max-width: $tablet) {
+          translate: 300% 500%;
+        }
+
         @apply opacity-0 w-[8.102vw] h-[8.102vw] rotate-[15.54deg] bottom-[4%] left-[15.914vw];
 
         @media (max-width: $tablet) {
-          @apply bottom-[10%];
+          @apply bottom-[10%] hidden;
         }
       }
 
       &:nth-child(3) {
         translate: 100% 75%;
 
+        @media (max-width: $tablet) {
+          translate: 300% 500%;
+        }
+
         @apply opacity-0 rotate-[-15.016deg] bottom-[25%] left-[21.701vw];
 
         @media (max-width: $tablet) {
-          @apply bottom-[20%];
+          @apply bottom-[22%];
         }
       }
 
       &:nth-child(4) {
         translate: 100% 75%;
 
+        @media (max-width: $tablet) {
+          translate: 300% 500%;
+        }
+
         @apply opacity-0 w-[9.259vw] h-[9.259vw] bottom-[-2%] left-[30.845vw] rotate-[-15.016deg];
 
         @media (max-width: $tablet) {
-          @apply bottom-[3%] left-[15vw];
+          @apply bottom-[5%] left-[17.5vw];
         }
       }
 
       &:nth-child(5) {
         translate: -100% 75%;
 
+        @media (max-width: $tablet) {
+          translate: -300% 500%;
+        }
+
         @apply opacity-0 w-[9.259vw] h-[9.259vw] bottom-[-5%] right-[32.697vw] rotate-[35.539deg];
 
         @media (max-width: $tablet) {
-          @apply bottom-[5%] right-[15vw];
+          @apply bottom-[2%] right-[17.5vw];
         }
       }
 
       &:nth-child(6) {
         translate: -100% 75%;
 
+        @media (max-width: $tablet) {
+          translate: -300% 500%;
+        }
+
         @apply opacity-0 rotate-[17.76deg] bottom-[19.08%] right-[30.671vw];
 
         @media (max-width: $tablet) {
-          @apply bottom-[15%] right-[20vw];
+          @apply bottom-[15%] right-[20vw] z-[1];
         }
       }
 
       &:nth-child(7) {
         translate: -100% 75%;
 
+        @media (max-width: $tablet) {
+          translate: -300% 500%;
+        }
+
         @apply opacity-0 w-[7.523vw] h-[7.523vw] rotate-[-6.74deg] right-[22.338vw] bottom-[1%];
 
         @media (max-width: $tablet) {
-          @apply bottom-[29%] right-[15vw];
+          @apply bottom-[33%] right-[15vw];
         }
       }
 
       &:nth-child(8) {
         translate: -100% 75%;
 
+        @media (max-width: $tablet) {
+          translate: -300% 500%;
+        }
+
         @apply opacity-0 w-[5.787vw] h-[5.787vw] rotate-[120deg] right-[22vw] bottom-[38%];
+
+        @media (max-width: $tablet) {
+          @apply right-[40vw] bottom-[40%];
+        }
       }
 
       &:nth-child(9) {
         translate: -100% 75%;
+
+        @media (max-width: $tablet) {
+          translate: -300% 500%;
+        }
 
         @apply opacity-0 w-[9.259vw] h-[9.259vw] rotate-[48.201deg] right-[13.021vw] bottom-[20%];
       }
@@ -245,7 +461,7 @@
     @apply absolute left-1/2 bottom-0 translate-x-[-50%] w-[19.213vw] h-[63.1vh] object-contain object-center translate-y-[5%] opacity-0 scale-[0.65] transition-transform duration-[450ms];
 
     @media (max-width: $tablet) {
-      @apply w-[62.051vw] h-[50vh] translate-y-0 z-[2] object-bottom;
+      @apply w-[62.051vw] h-[50dvh] translate-y-0 z-[2] object-bottom;
     }
 
     transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1) !important;
@@ -259,7 +475,7 @@
     @apply w-[28.356vw] h-[5.671vw] rotate-[-37.992deg] absolute right-[9.317vw] top-[35%];
 
     @media (max-width: $tablet) {
-      @apply rotate-[113.33deg] w-[18vw] h-[16vw] right-[10vw] z-[3] top-[47%];
+      @apply rotate-[120.33deg] w-[18vw] h-[16vw] right-[12.5vw] z-[3] top-[42%];
     }
 
     stroke-dashoffset: 1000;
@@ -274,7 +490,7 @@
     @apply w-[28.067vw] h-[7.697vw] opacity-0 rotate-[15deg] duration-[760ms] delay-[450ms] translate-y-[75%] z-[-1];
 
     @media (max-width: $tablet) {
-      @apply w-[55.385vw] h-[15.385vw];
+      @apply w-[55.385vw] h-[15.385vw] z-[1];
     }
 
     transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);

@@ -12,7 +12,7 @@ const Header = () => {
     <header className={clsx(styles.header, pageLoaded && styles.loaded)}>
       <div className={styles.headerSocials}>
         <Magnetic>
-          <a href="">
+          <a target="_blank" href="https://www.instagram.com/_behindtheseens_/">
             <svg
               width="80"
               height="80"
@@ -52,7 +52,7 @@ const Header = () => {
           </a>
         </Magnetic>
         <Magnetic>
-          <a href="">
+          <a target="_blank" href="https://www.tiktok.com/@behindtheseens_">
             <svg
               width="80"
               height="80"
@@ -72,7 +72,7 @@ const Header = () => {
           </a>
         </Magnetic>
       </div>
-    
+
       {window.innerWidth > 768 && (
         <Magnetic>
           <a href="" className={styles.headerAppStoreLink}>

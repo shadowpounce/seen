@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className={clsx(styles.footer, pageLoaded && styles.loaded)}>
       <a href="/terms-and-conditions">terms</a>
       <a href="/privacy-policy">policy</a>
-      <a href="/contact">contact</a>
+      <a href="mailto:team@seen.video">contact</a>
     </footer>
   )
 }

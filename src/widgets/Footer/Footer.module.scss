@@ -1,8 +1,12 @@
 .footer {
-  @apply fixed left-0 right-0 bottom-0 w-full pb-[1.157vw] flex items-center justify-center gap-[1.852vw] opacity-0 translate-y-[100%] duration-[650ms] delay-[400ms] z-[5];
+  @apply fixed left-0 right-0 bottom-0 w-full pb-[1.157vw] flex items-center justify-center gap-[2.5vw] opacity-0 translate-y-[100%] duration-[650ms] delay-[400ms] z-[5];
 
   transition-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
   transition-property: opacity, transform;
+
+  @media (max-width: $tablet) {
+    @apply gap-[5vw];
+  }
 
   &.loaded {
     @apply opacity-100 translate-y-0;

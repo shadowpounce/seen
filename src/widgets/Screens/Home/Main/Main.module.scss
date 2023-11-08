@@ -43,19 +43,23 @@
     }
 
     .arrow {
-      animation: draw 7.5s infinite ease 1s;
+      animation: draw 7.5s infinite ease 3s;
+
+      @media (max-width: $tablet) {
+        animation: drawMobile 5s infinite ease 3s;
+      }
     }
 
     path[class='l-1'] {
-      animation: draw 10s infinite ease 1s;
+      animation: drawEnd 5s forwards 1s;
     }
 
     path[class='l-2'] {
-      animation: draw 10s infinite ease 1.15s;
+      animation: drawEnd 5s forwards 1.15s;
     }
 
     path[class='l-3'] {
-      animation: draw 10s infinite ease 1.3s;
+      animation: drawEnd 5s forwards 1.3s;
     }
 
     .device {
@@ -481,6 +485,10 @@
     stroke-dashoffset: 1000;
     stroke-dasharray: 1000;
 
+    @media (max-width: $tablet) {
+      stroke-dashoffset: -1000;
+    }
+
     svg {
       @apply w-full h-full;
     }
@@ -509,5 +517,25 @@
 
   100% {
     stroke-dashoffset: 1000;
+  }
+}
+
+@keyframes drawEnd {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawMobile {
+  45% {
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -1000;
   }
 }

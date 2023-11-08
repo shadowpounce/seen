@@ -46,7 +46,7 @@
       animation: draw 7.5s infinite ease 3s;
 
       @media (max-width: $tablet) {
-        animation: drawMobile 5s infinite ease 3s;
+        animation: drawMobile 7s infinite ease 3s;
       }
     }
 
@@ -479,15 +479,11 @@
     @apply w-[28.356vw] h-[5.671vw] rotate-[-37.992deg] absolute right-[9.317vw] top-[35%];
 
     @media (max-width: $tablet) {
-      @apply rotate-[120.33deg] w-[18vw] h-[16vw] right-[12.5vw] z-[3] top-[42%];
+      @apply rotate-[0deg] w-[18vw] h-[16vw] right-[12.5vw] z-[3] top-[42%];
     }
 
     stroke-dashoffset: 1000;
     stroke-dasharray: 1000;
-
-    @media (max-width: $tablet) {
-      stroke-dashoffset: -1000;
-    }
 
     svg {
       @apply w-full h-full;
@@ -527,15 +523,19 @@
 }
 
 @keyframes drawMobile {
-  45% {
-    stroke-dashoffset: 0;
-  }
-
   50% {
     stroke-dashoffset: 0;
   }
 
+  65% {
+    stroke-dashoffset: 0;
+  }
+
+  90% {
+    stroke-dashoffset: 1000;
+  }
+
   100% {
-    stroke-dashoffset: -1000;
+    stroke-dashoffset: 1000;
   }
 }

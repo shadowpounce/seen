@@ -69,7 +69,11 @@ export const Main = () => {
         ))}
       </div>
       {window.innerWidth <= 768 && (
-        <a className={styles.mobileDownload} href="">
+        <a
+          className={styles.mobileDownload}
+          target="_blank"
+          href="https://apps.apple.com/us/app/seen-video/id6448085432"
+        >
           <svg
             width="180"
             height="76"

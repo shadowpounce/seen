@@ -75,7 +75,11 @@ const Header = () => {
 
       {window.innerWidth > 768 && (
         <Magnetic>
-          <a href="" className={styles.headerAppStoreLink}>
+          <a
+            href="https://apps.apple.com/us/app/seen-video/id6448085432"
+            target="_blank"
+            className={styles.headerAppStoreLink}
+          >
             <img src="/images/app-store.svg" alt="" />
           </a>
         </Magnetic>
